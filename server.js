@@ -6,7 +6,7 @@ const database = require('knex')(configuration);
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 app.set('port', process.env.PORT || 3001);
 app.locals.title = 'express-react-redux-boilerplate';
