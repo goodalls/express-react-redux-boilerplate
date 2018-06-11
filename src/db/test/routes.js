@@ -31,7 +31,7 @@ describe("API routes", () => {
         .then(response => {
           expect(response.text).equal("Hello World!");
         })
-        .catch(error => {
+        .catch(error => { 
           throw error;
         });
     });
