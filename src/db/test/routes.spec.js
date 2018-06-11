@@ -10,18 +10,29 @@ const database = require('knex')(configuration);
 chai.use(chaiHttp);
 
 describe('API routes', () => {
-      beforeEach((done) => {
-        database.migrate.rollback()
-          .then(() => {
-            database.migrate.latest()
-              .then(() => {
-                return database.seed.run()
-                  .then(() => {
-                    done();
-                  });
-              });
-          });
-      });
+  // beforeEach((done) => {
+  //   database.migrate.rollback()
+  //   .then(() => {
+  //     database.migrate.latest()
+  //       .then(() => {
+  //         return database.seed.run()
+  //         .then(() => {
+  //           done();
+  //       });
+  //     });
+  //   });
+  // });
 
-      // tests go here
+  describe('GET /', () => {
+    it('sends "Hello World!"', () => {
+      return chai.request(server)
+      .get('/')
+      .then(response => {
+       response.should.be.equal.toString('Hello World!')
+      })
+      .catch(error => {
+        throw error;
+      })
     })
+  })
+});
