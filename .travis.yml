@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- node
+# NEEDS SET TO DATABASE FOR PROJECT
+# services:
+# - postgresql
+# before_script:
+# - psql -c 'CREATE DATABASE __________;' -U postgres
+script:
+- npm run test-api
+- npm run test
+- npm run lint
+notifications:
+- email: false
+deploy:
+  provider: heroku
+  # app: 
+  skip_cleanup: true
+  # api_key: need to run travis comand for api key
+  # travis encrypt $(heroku auth:token) --add deploy.api_key --org
+
+
