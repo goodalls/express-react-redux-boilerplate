@@ -20,6 +20,8 @@
     "redux": "^3.7.2"
   },
   "scripts": {
+    "lint": "./node_modules/.bin/eslint ./src/*.js",
+    "heroku-postbuild": "npm install --only=dev && npm install && npm run build",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
