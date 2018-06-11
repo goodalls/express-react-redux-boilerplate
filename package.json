@@ -31,7 +31,7 @@
     "client": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom ./src/components",
     "test-api": "NODE_ENV=test mocha --exit ./src/db/test/routes.spec.js",
     "eject": "react-scripts eject"
   },
