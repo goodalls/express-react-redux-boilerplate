@@ -31,10 +31,13 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "test-api": "NODE_ENV=test mocha --exit ./API/test/routes.spec.js",
+    "test-api": "NODE_ENV=test mocha --exit ./src/db/test/routes.spec.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.0.5",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
