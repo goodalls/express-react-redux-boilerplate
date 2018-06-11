@@ -4,9 +4,10 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 const bodyParser = require('body-parser');
+const path = require('path');
 
 app.use(bodyParser.json());
-// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/build')));
 
 app.set('port', process.env.PORT || 3001);
 app.locals.title = 'express-react-redux-boilerplate';
